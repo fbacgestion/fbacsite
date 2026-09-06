@@ -700,6 +700,114 @@ h2 {
     color: var(--red)
 }
 
+.form-status {
+    width: 100%;
+    min-height: 250px;
+    box-sizing: border-box;
+    padding: 40px 20px;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    text-align: center;
+    background: #111418;
+    color: white;
+}
+
+.form-status.active {
+    display: flex;
+}
+
+/* =========================
+   LOADER
+   ========================= */
+
+.loader {
+    width: min(280px, 80%);
+    height: 4px;
+    background: #292d32;
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.loader span {
+    display: block;
+    width: 40%;
+    height: 100%;
+    background: #e30613;
+
+    animation: loaderMove 1.2s ease-in-out infinite;
+}
+.form-success {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.form-success svg {
+    width: 70px;
+    height: 70px;
+    margin-bottom: 20px;
+    overflow: visible;
+}
+
+.form-success circle {
+    fill: none;
+    stroke: #e30613;
+    stroke-width: 2;
+    stroke-dasharray: 151;
+    stroke-dashoffset: 151;
+    animation: drawCircle 0.6s ease forwards;
+}
+
+.form-success path {
+    fill: none;
+    stroke: white;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 40;
+    stroke-dashoffset: 40;
+    animation: drawCheck 0.4s ease 0.5s forwards;
+}
+
+.form-success strong {
+    opacity: 0;
+    animation: successText 0.4s ease 0.8s forwards;
+}
+
+.form-success p {
+    opacity: 0;
+    margin-top: 8px;
+    animation: successText 0.4s ease 1s forwards;
+}
+
+@keyframes drawCircle {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes drawCheck {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes successText {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 .footer {
     background: #07090b;
     color: white;
@@ -892,5 +1000,46 @@ code {
         .schedule-row em {
             display: flex;
         }
+    }
+}
+@keyframes loaderMove {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    50% {
+        transform: translateX(150%);
+    }
+
+    100% {
+        transform: translateX(250%);
+    }
+}
+
+.form-status strong {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.5rem;
+    letter-spacing: 0.08em;
+}
+
+.form-status small {
+    margin-top: 6px;
+    color: #8c9299;
+    letter-spacing: 0.12em;
+    font-size: 0.7rem;
+}
+@media (max-width: 600px) {
+
+    .form-status {
+        min-height: 220px;
+        padding: 30px 15px;
+    }
+
+    .loader {
+        width: min(240px, 85%);
+    }
+
+    .form-status strong {
+        font-size: 1.3rem;
     }
 }

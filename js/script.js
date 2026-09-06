@@ -1,6 +1,10 @@
 let events = [];
 let news = []
 
+const contactForm = document.querySelector("#contactForm");
+const formMessage = document.querySelector("#formMessage");
+const showAllNews = document.querySelector("#showAllNews");
+
 function renderNews(items = news) {
 
   const sortedNews = [...items].sort((a, b) => {
@@ -49,19 +53,19 @@ function renderEvents() {
 }
 
 fetch("js/events.json")
-.then(response => response.json())
-.then(data => {
-  events = data;
-  renderEvents();
-});
+  .then(response => response.json())
+  .then(data => {
+    events = data;
+    renderEvents();
+  });
 
 fetch("js/news.json")
-.then(response => response.json())
-.then(data => {
-  news = data;
-  renderNews();
-});
-const showAllNews = document.querySelector("#showAllNews");
+  .then(response => response.json())
+  .then(data => {
+    news = data;
+    renderNews();
+  });
+
 
 if (news.length < 4) {
   showAllNews.style.display = "none";
@@ -84,9 +88,61 @@ document.querySelectorAll(".main-nav a").forEach(a => a.addEventListener("click"
   document.querySelector(".main-nav").classList.remove("open");
 }));
 
-document.querySelector("#contactForm").addEventListener("submit", e => {
+contactForm.addEventListener("submit", async (e) => {
   e.preventDefault();
-  document.querySelector("#formMessage").textContent =
-    "Message préparé. Pour recevoir réellement les messages, il faudra connecter ce formulaire à un service d'envoi.";
-});
 
+  contactForm.style.display = "none";
+
+  formStatus.classList.add("active");
+  formStatus.innerHTML = `
+    <div class="loader">
+        <span></span>
+    </div>
+
+    <strong>ENVOI EN COURS...</strong>
+    <small>TRANSMISSION DU MESSAGE</small>
+  `;
+
+  const formData = new FormData(contactForm);
+
+  try {
+    const response = await fetch(contactForm.action, {
+      method: "POST",
+      body: formData,
+      headers: {
+        "Accept": "application/json"
+      }
+    });
+
+    if (response.ok) {
+
+      formStatus.innerHTML = `
+      <div class="form-success">
+            <svg viewBox="0 0 52 52" aria-hidden="true">
+                <circle cx="26" cy="26" r="24"></circle>
+                <path d="M14 27 L22 35 L38 18"></path>
+            </svg>
+
+            <strong>MESSAGE ENVOYÉ</strong>
+            <p>Votre message a bien été transmis au FBAC.</p>
+      </div>
+      `;
+      contactForm.reset();
+    } else {
+
+      formStatus.innerHTML = `
+        <div class="form-error">✕</div>
+        <strong>ÉCHEC DE L'ENVOI</strong>
+        <p>Une erreur est survenue. Veuillez réessayer.</p>
+      `;
+    }
+
+  } catch (error) {
+
+    formStatus.innerHTML = `
+      <div class="form-error">✕</div>
+      <strong>ÉCHEC DE L'ENVOI</strong>
+      <p>Impossible de contacter le serveur.</p>
+  `;
+  }
+});

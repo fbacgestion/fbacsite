@@ -1,0 +1,321 @@
+/* =========================
+   BASE
+   ========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #0b0d0f;
+    color: #f5f5f5;
+    font-family: "Inter", Arial, sans-serif;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   HEADER
+   ========================= */
+
+.privacy-header {
+    background: #111418;
+    border-bottom: 1px solid #292d32;
+}
+
+.privacy-header-content {
+    max-width: 1100px;
+    margin: auto;
+    padding: 18px 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+
+/* =========================
+   BOUTON RETOUR
+   ========================= */
+
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 16px;
+
+    background: #e30613;
+    color: white;
+
+    text-decoration: none;
+
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.back-button:hover {
+    background: #b80510;
+    transform: translateX(-3px);
+}
+
+
+/* =========================
+   IDENTITÉ FBAC
+   ========================= */
+
+.privacy-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.privacy-brand img {
+    width: 42px;
+    height: 42px;
+}
+
+.privacy-brand div {
+    display: flex;
+    flex-direction: column;
+}
+
+.privacy-brand span {
+    color: #8c9299;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+.privacy-brand strong {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.5rem;
+    line-height: 1;
+    letter-spacing: 0.08em;
+}
+
+
+/* =========================
+   PAGE
+   ========================= */
+
+.privacy-page {
+    padding: 70px 20px 80px;
+}
+
+.privacy-container {
+    width: min(100%, 900px);
+    margin: auto;
+}
+
+
+/* =========================
+   TITRE
+   ========================= */
+
+.privacy-title {
+    margin-bottom: 65px;
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+
+    color: #e30613;
+
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+}
+
+.privacy-title h1 {
+    margin: 0;
+
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+}
+
+.privacy-title > p:last-child {
+    max-width: 650px;
+    margin-top: 20px;
+
+    color: #9da3aa;
+    font-size: 1rem;
+}
+
+
+/* =========================
+   SECTIONS
+   ========================= */
+
+.privacy-section {
+    margin-bottom: 50px;
+}
+
+.privacy-section h2 {
+    margin: 0 0 15px;
+
+    color: white;
+
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 1.8rem;
+    line-height: 1.1;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   CARTES
+   ========================= */
+
+.privacy-card {
+    padding: 28px 30px;
+
+    background: #111418;
+    border-left: 3px solid #e30613;
+}
+
+.privacy-card p {
+    margin: 0 0 18px;
+    color: #c5c9cd;
+}
+
+.privacy-card p:last-child {
+    margin-bottom: 0;
+}
+
+.privacy-card strong {
+    color: white;
+}
+
+.privacy-card a {
+    color: #e30613;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.privacy-card a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================
+   LISTES
+   ========================= */
+
+.privacy-card ul {
+    margin: 0 0 20px;
+    padding-left: 22px;
+
+    color: #c5c9cd;
+}
+
+.privacy-card li {
+    margin-bottom: 6px;
+}
+
+.privacy-card li::marker {
+    color: #e30613;
+}
+
+
+/* =========================
+   FOOTER
+   ========================= */
+
+.privacy-footer {
+    margin-top: 70px;
+    padding-top: 30px;
+
+    border-top: 1px solid #292d32;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.privacy-footer p {
+    margin: 0;
+
+    color: #686f76;
+    font-size: 0.8rem;
+}
+
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 700px) {
+
+    .privacy-header-content {
+        padding: 15px 18px;
+    }
+
+    .privacy-brand span {
+        display: none;
+    }
+
+    .privacy-brand strong {
+        font-size: 1.3rem;
+    }
+
+    .privacy-brand img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .back-button {
+        padding: 9px 12px;
+        font-size: 0.85rem;
+    }
+
+    .privacy-page {
+        padding: 50px 15px 60px;
+    }
+
+    .privacy-title {
+        margin-bottom: 45px;
+    }
+
+    .privacy-title h1 {
+        font-size: clamp(2.8rem, 15vw, 4.5rem);
+    }
+
+    .privacy-section {
+        margin-bottom: 40px;
+    }
+
+    .privacy-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .privacy-card {
+        padding: 22px 20px;
+    }
+
+    .privacy-footer {
+        margin-top: 50px;
+
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
