@@ -1,0 +1,102 @@
+[ 
+ {
+    "date": "2026-12-04",
+    "day": 4,
+    "month": "DEC",
+    "year": 2026,
+    "title": "Pot de noël 🎅",
+    "info": "Un moment convivial pour se retrouver, échanger et partager un verre tous ensemble avant les fêtes !",
+    "type": "Événement convivial",
+    "lieu": "Gymnase Remi Jamme 20H00"
+  },
+  {
+    "date": "2027-03-25",
+    "day": 25,
+    "month": "MARS",
+    "year": 2027,
+    "title": "Pâques 🐰",
+    "info": "À l’occasion de Pâques, le FBAC réserve une petite surprise gourmande à ses jeunes pratiquants.Une distribution de chocolats sera organisée à la fin des cours pour terminer l’entraînement sur une note festive et conviviale !",
+    "type": "Événement convivial",
+    "lieu": "Gymnase Remi Jamme 18H-20H"
+  },
+  {
+    "date": "2026-10-28",
+    "day": 28,
+    "month": "OCT",
+    "year": 2026,
+    "title": "Haloween 🎃",
+    "info": "À l’occasion d'Haloween', le FBAC réserve une petite surprise gourmande à ses jeunes pratiquants.Une distribution de bonbons sera organisée à la fin des cours pour terminer l’entraînement sur une note festive et conviviale !",
+    "type": "Événement convivial",
+    "lieu": "Gymnase Remi Jamme 18H-20H"
+  },
+  {
+    "date": "2027-01-15",
+    "day": 15,
+    "month": "JANV",
+    "year": 2027,
+    "title": "Galette des rois 👑",
+    "info": "Un moment convivial pour se retrouver, échanger et partager un verre et quelques part de galette tous ensemble !",
+    "type": "Événement convivial",
+    "lieu": "Gymnase Remi Jamme 20H00"
+  },
+  {
+    "date": "2027-04-03",
+    "day": 3,
+    "month": "AVRIL",
+    "year": 2027,
+    "title": "STAGE Rodrigue Listoir 🥊 Troisième édition",
+    "info": "Une journée exceptionnelle avec Rodrigue Listoir, autour de la technique, du perfectionnement et du partage d’expérience. Un stage ouvert aux pratiquants souhaitant progresser et enrichir leur pratique.",
+    "type": "Stage FBAC",
+    "lieu": "Info à venir 14H-17H"
+  },
+  {
+    "date": "2026-11-14",
+    "day": 14,
+    "month": "NOVEMBRE",
+    "year": 2026,
+    "title": "STAGE Rodrigue Listoir 🥊 Deuxième édition",
+    "info": "Une journée exceptionnelle avec Rodrigue Listoir, autour de la technique, du perfectionnement et du partage d’expérience. Un stage ouvert aux pratiquants souhaitant progresser et enrichir leur pratique.",
+    "type": "Stage FBAC",
+    "lieu": "Info à venir 14H-17H"
+  },
+  {
+    "date": "2027-06-09",
+    "day": 9,
+    "month": "JUIN",
+    "year": 2027,
+    "title": "Passage de grade Adulte 1 🥋",
+    "info": "Nos pratiquants se retrouvent pour mettre en pratique le travail réalisé tout au long de la saison et valider leur progression à travers les différentes épreuves du passage de grade.",
+    "type": "Passage de grade",
+    "lieu": "Gymnase Remi Jamme H à venir"
+  },
+  {
+    "date": "2027-06-11",
+    "day": 11,
+    "month": "JUIN",
+    "year": 2027,
+    "title": "Passage de grade Adulte 2 🥋",
+    "info": "Nos pratiquants se retrouvent pour mettre en pratique le travail réalisé tout au long de la saison et valider leur progression à travers les différentes épreuves du passage de grade.",
+    "type": "Passage de grade",
+    "lieu": "Gymnase Remi Jamme H à venir"
+  },
+  {
+    "date": "2027-06-16",
+    "day": 16,
+    "month": "JUIN",
+    "year": 2027,
+    "title": "Passage de grade enfant 🥋",
+    "info": "Nos pratiquants se retrouvent pour mettre en pratique le travail réalisé tout au long de la saison et valider leur progression à travers les différentes épreuves du passage de grade.",
+    "type": "Passage de grade",
+    "lieu": "Gymnase Remi Jamme H à venir"
+  },
+  {
+    "date": "2027-06-27",
+    "day": 27,
+    "month": "JUIN",
+    "year": 2027,
+    "title": "Assembée général & barbecue",
+    "info": "Une journée importante pour le club, avec l’Assemblée Générale du FBAC (10H00) suivie de notre traditionnel barbecue de fin de saison (12H00). L’occasion de faire le bilan de la saison, de préparer la prochaine et surtout de partager un moment convivial tous ensemble pour clôturer l’année sportive !",
+    "type": "AG et Repas",
+    "lieu": "Salle polyvalente de Saint-Georges-Montcocq 10H00"
+  }
+]
