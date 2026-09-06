@@ -335,6 +335,263 @@ h2 {
     transform: scale(1.05);
 }
 
+/* =========================
+   GALERIE
+   ========================= */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 220px;
+    gap: 10px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: end;
+    min-width: 0;
+    border: 1px solid #303439;
+    background: #171a1e;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.gallery-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.85),
+            rgba(0, 0, 0, 0.15) 65%,
+            transparent);
+}
+
+.gallery-overlay {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding: 18px;
+}
+
+.gallery-overlay .tag {
+    display: inline-block;
+    margin-bottom: 6px;
+}
+
+.gallery-overlay h3 {
+    margin: 0;
+    font: 800 26px/1 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+}
+
+.gallery-overlay p {
+    margin: 6px 0 0;
+    font-size: 12px;
+    color: #ccc;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.hidden-gallery {
+    display: none;
+}
+
+#showMoreGallery {
+    display: block;
+    margin: 30px auto 0;
+}
+
+/* =========================
+   LIGHTBOX GALERIE
+   ========================= */
+
+.gallery-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: rgba(0, 0, 0, 0.94);
+}
+
+.gallery-lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    position: relative;
+
+    width: min(1100px, 90vw);
+    max-height: 90vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#lightboxImage {
+    display: block;
+
+    max-width: 100%;
+    max-height: 80vh;
+
+    object-fit: contain;
+
+    border: 1px solid #303439;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-caption {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    margin-top: 12px;
+
+    color: #fff;
+}
+
+.lightbox-caption strong {
+    font: 700 20px/1 'Barlow Condensed', sans-serif;
+    text-transform: uppercase;
+}
+
+#lightboxCounter {
+    font-size: 13px;
+    color: #aaa;
+    white-space: nowrap;
+}
+
+
+/* BOUTONS */
+
+.lightbox-close,
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+
+    z-index: 3;
+
+    border: 0;
+    background: none;
+
+    color: #fff;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.lightbox-close:hover,
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    color: var(--red);
+}
+
+
+/* FERMER */
+
+.lightbox-close {
+    top: 20px;
+    right: 25px;
+
+    font-size: 42px;
+    line-height: 1;
+}
+
+
+/* PRECEDENTE */
+
+.lightbox-prev,
+.lightbox-next {
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    font-size: 70px;
+    line-height: 1;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-prev {
+    left: 25px;
+}
+
+.lightbox-next {
+    right: 25px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 720px) {
+
+    .gallery-lightbox {
+        padding: 15px;
+    }
+
+    .lightbox-content {
+        width: 100%;
+    }
+
+    #lightboxImage {
+        max-width: 100%;
+        max-height: 75vh;
+    }
+
+    .lightbox-caption strong {
+        font-size: 17px;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        font-size: 50px;
+    }
+
+    .lightbox-prev {
+        left: 5px;
+    }
+
+    .lightbox-next {
+        right: 5px;
+    }
+
+    .lightbox-close {
+        top: 10px;
+        right: 15px;
+        font-size: 36px;
+    }
+}
+
 .news-body {
     padding: 18px
 }
@@ -618,37 +875,6 @@ h2 {
     max-width: 650px
 }
 
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 180px;
-    gap: 10px
-}
-
-.gallery-item {
-    display: flex;
-    align-items: end;
-    padding: 16px;
-    background: linear-gradient(135deg, #171a1e, #4a4e53);
-    font: 800 27px 'Barlow Condensed';
-    border: 1px solid #303439
-}
-
-.gallery-item:nth-child(2),
-.gallery-item:nth-child(5) {
-    transform: translateY(20px)
-}
-
-.gallery-note {
-    margin-top: 30px;
-    font-size: 12px;
-    color: #777
-}
-
-.section-dark .gallery-note {
-    color: #777
-}
-
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -740,6 +966,7 @@ h2 {
 
     animation: loaderMove 1.2s ease-in-out infinite;
 }
+
 .form-success {
     display: flex;
     align-items: center;
@@ -808,6 +1035,7 @@ h2 {
         transform: translateY(0);
     }
 }
+
 .footer {
     background: #07090b;
     color: white;
@@ -893,6 +1121,11 @@ code {
     .footer-grid {
         grid-template-columns: 1fr 1fr
     }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 200px;
+    }
 }
 
 @media(max-width:720px) {
@@ -942,6 +1175,23 @@ code {
         flex-direction: column
     }
 
+    .gallery {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 220px;
+    }
+
+    .gallery-overlay {
+        padding: 16px;
+    }
+
+    .gallery-overlay h3 {
+        font-size: 24px;
+    }
+
+    .gallery-item:hover img {
+        transform: none;
+    }
+
     .values-grid,
     .news-grid,
     .split,
@@ -957,7 +1207,7 @@ code {
     }
 
     .event {
-       width: 100%;
+        width: 100%;
     }
 
     .event-type {
@@ -966,14 +1216,7 @@ code {
         justify-content: space-around;
     }
 
-    .gallery {
-        grid-template-columns: 1fr 1fr
-    }
 
-    .gallery-item:nth-child(2),
-    .gallery-item:nth-child(5) {
-        transform: none
-    }
 
     .registration-box {
         align-items: flex-start;
@@ -1002,6 +1245,7 @@ code {
         }
     }
 }
+
 @keyframes loaderMove {
     0% {
         transform: translateX(-100%);
@@ -1028,6 +1272,7 @@ code {
     letter-spacing: 0.12em;
     font-size: 0.7rem;
 }
+
 @media (max-width: 600px) {
 
     .form-status {

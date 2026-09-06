@@ -1,9 +1,21 @@
 let events = [];
 let news = []
+let gallery = [];
+let currentGallery = [];
+let currentPhotoIndex = 0;
 
+const galleryLightbox = document.querySelector("#galleryLightbox");
+const lightboxImage = document.querySelector("#lightboxImage");
+const lightboxTitle = document.querySelector("#lightboxTitle");
+const lightboxCounter = document.querySelector("#lightboxCounter");
+const lightboxClose = document.querySelector("#lightboxClose");
+const lightboxPrev = document.querySelector("#lightboxPrev");
+const lightboxNext = document.querySelector("#lightboxNext");
 const contactForm = document.querySelector("#contactForm");
 const formMessage = document.querySelector("#formMessage");
 const showAllNews = document.querySelector("#showAllNews");
+const galleryList = document.querySelector("#galleryList");
+const showMoreGallery = document.querySelector("#showMoreGallery");
 
 function renderNews(items = news) {
 
@@ -52,6 +64,29 @@ function renderEvents() {
   `).join("");
 }
 
+function renderGallery() {
+
+  const sortedGallery = [...gallery].sort((a, b) => {
+    return new Date(b.date) - new Date(a.date);
+  });
+
+  document.querySelector("#galleryList").innerHTML = sortedGallery.map((item, index) => `
+    <article 
+      class="gallery-item ${index >= 6 ? "hidden-gallery" : ""}"
+      data-gallery-index="${index}"
+    >
+      <img src="${item.cover}" alt="${item.title}">
+
+      <div class="gallery-overlay">
+        <span class="tag">${item.category}</span>
+        <h3>${item.title}</h3>
+        <p>${item.date}</p>
+      </div>
+    </article>
+  `).join("");
+}
+
+
 fetch("js/events.json")
   .then(response => response.json())
   .then(data => {
@@ -66,9 +101,79 @@ fetch("js/news.json")
     renderNews();
   });
 
+fetch("js/gallery.json")
+  .then(response => response.json())
+  .then(data => {
+    gallery = data;
+    renderGallery();
+  });
 
 if (news.length < 4) {
   showAllNews.style.display = "none";
+}
+
+function openLightbox(galleryIndex) {
+
+  const sortedGallery = [...gallery].sort((a, b) => {
+    return new Date(b.date) - new Date(a.date);
+  });
+
+  currentGallery = sortedGallery[galleryIndex].images;
+  currentPhotoIndex = 0;
+
+  lightboxTitle.textContent = sortedGallery[galleryIndex].title;
+
+  updateLightbox();
+
+  galleryLightbox.classList.add("active");
+  galleryLightbox.setAttribute("aria-hidden", "false");
+
+  document.body.style.overflow = "hidden";
+}
+
+
+function updateLightbox() {
+
+  lightboxImage.src = currentGallery[currentPhotoIndex];
+
+  lightboxCounter.textContent =
+    `${currentPhotoIndex + 1} / ${currentGallery.length}`;
+
+  lightboxImage.alt =
+    `${lightboxTitle.textContent} - photo ${currentPhotoIndex + 1}`;
+}
+
+
+function closeLightbox() {
+
+  galleryLightbox.classList.remove("active");
+  galleryLightbox.setAttribute("aria-hidden", "true");
+
+  document.body.style.overflow = "";
+}
+
+
+function nextPhoto() {
+
+  currentPhotoIndex++;
+
+  if (currentPhotoIndex >= currentGallery.length) {
+    currentPhotoIndex = 0;
+  }
+
+  updateLightbox();
+}
+
+
+function previousPhoto() {
+
+  currentPhotoIndex--;
+
+  if (currentPhotoIndex < 0) {
+    currentPhotoIndex = currentGallery.length - 1;
+  }
+
+  updateLightbox();
 }
 
 showAllNews.addEventListener("click", () => {
@@ -144,5 +249,55 @@ contactForm.addEventListener("submit", async (e) => {
       <strong>ÉCHEC DE L'ENVOI</strong>
       <p>Impossible de contacter le serveur.</p>
   `;
+  }
+});
+
+showMoreGallery.addEventListener("click", () => {
+
+  document.querySelectorAll(".hidden-gallery").forEach(card => {
+    card.classList.remove("hidden-gallery");
+  });
+
+  showMoreGallery.style.display = "none";
+});
+
+document.querySelector("#galleryList").addEventListener("click", (e) => {
+
+  const card = e.target.closest(".gallery-item");
+
+  if (!card) return;
+
+  const galleryIndex = Number(card.dataset.galleryIndex);
+
+  openLightbox(galleryIndex);
+});
+
+lightboxClose.addEventListener("click", closeLightbox);
+
+lightboxNext.addEventListener("click", nextPhoto);
+
+lightboxPrev.addEventListener("click", previousPhoto);
+
+document.addEventListener("keydown", (e) => {
+
+  if (!galleryLightbox.classList.contains("active")) return;
+
+  if (e.key === "Escape") {
+    closeLightbox();
+  }
+
+  if (e.key === "ArrowRight") {
+    nextPhoto();
+  }
+
+  if (e.key === "ArrowLeft") {
+    previousPhoto();
+  }
+});
+
+galleryLightbox.addEventListener("click", (e) => {
+
+  if (e.target === galleryLightbox) {
+    closeLightbox();
   }
 });

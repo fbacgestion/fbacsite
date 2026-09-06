@@ -21,6 +21,30 @@
   <link rel="icon" type="image/svg+xml" href="images/dragon-fbacico.svg">
   <link rel="stylesheet" href="css/style.css">
 </head>
+<!-- LIGHTBOX GALERIE -->
+<div class="gallery-lightbox" id="galleryLightbox" aria-hidden="true">
+
+  <button class="lightbox-close" id="lightboxClose" aria-label="Fermer">
+    ×
+  </button>
+
+  <button class="lightbox-prev" id="lightboxPrev" aria-label="Photo précédente">
+    ‹
+  </button>
+
+  <div class="lightbox-content">
+    <img id="lightboxImage" src="" alt="">
+    <div class="lightbox-caption">
+      <strong id="lightboxTitle"></strong>
+      <span id="lightboxCounter"></span>
+    </div>
+  </div>
+
+  <button class="lightbox-next" id="lightboxNext" aria-label="Photo suivante">
+    ›
+  </button>
+
+</div>
 
 <body>
   <header class="site-header">
@@ -200,21 +224,19 @@
 
     <section id="galerie" class="section section-dark">
       <div class="container">
+
         <div class="section-heading">
           <div>
             <p class="eyebrow">EN IMAGES</p>
             <h2>Galerie</h2>
           </div>
         </div>
-        <div class="gallery">
-          <div class="gallery-item g1">ENTRAÎNEMENT</div>
-          <div class="gallery-item g2">STAGE</div>
-          <div class="gallery-item g3">COMPÉTITION</div>
-          <div class="gallery-item g4">LE CLUB</div>
-          <div class="gallery-item g5">ÉQUIPE</div>
-          <div class="gallery-item g6">ÉVÉNEMENT</div>
-        </div>
-        </p>
+
+        <div class="gallery" id="galleryList"></div>
+
+        <button class="text-button" id="showMoreGallery">
+          Voir plus →
+        </button>
       </div>
     </section>
     <section id="reviews">
