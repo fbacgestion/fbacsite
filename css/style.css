@@ -641,6 +641,11 @@ h2 {
     border: 1px solid #292e32;
     background: #111418
 } */
+.p-activity {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: justify;
+}
 
 .event {
     display: flex;
