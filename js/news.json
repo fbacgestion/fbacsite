@@ -3,21 +3,23 @@
     "tag": "Vie du club",
     "date": "2026-07-05",
     "title": "Assemblée générale du 5 juillet",
-    "text": "Retrouvez les informations concernant notre assemblée générale et la saison à venir.",
+    "text": "Le FBAC fait le bilan de la saison 2025-2026 et présente les projets et objectifs pour la prochaine saison.",
     "image": "images/news/ag.jpeg"
   },
+
   {
     "tag": "Stage",
     "date": "2026-06-06",
     "title": "Stage exceptionnel avec Rodrigue Listoir",
-    "text": "Retour sur une journée de stage placée sous le signe de la technique, du travail et de la bonne humeur.",
+    "text": "Une journée intense autour de la technique, du travail et du partage avec Rodrigue Listoir.",
     "image": "images/news/stage-rodrigue.jpg"
   },
+
   {
     "tag": "Compétition",
     "date": "2026-05-20",
     "title": "9 podiums pour le FBAC !",
-    "text": "Félicitations à nos compétiteurs pour leurs excellents résultats.",
+    "text": "Neuf compétiteurs du FBAC montent sur le podium et récompensent leur travail et leur engagement.",
     "image": "images/news/9podium.jpg"
   }
 ]

@@ -1074,18 +1074,35 @@ h2 {
 }
 
 .socials {
-    display: flex;
-    gap: 8px
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
 .socials a {
-    width: 34px;
-    height: 34px;
-    border: 1px solid #333;
-    display: grid !important;
-    place-items: center;
-    border-radius: 50%;
-    color: white !important
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid #303439;
+  color: #fff;
+
+  font-size: 18px;
+  text-decoration: none;
+
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.socials a:hover {
+  color: var(--red);
+  border-color: var(--red);
+  transform: translateY(-2px);
 }
 
 .copyright {
