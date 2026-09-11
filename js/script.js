@@ -199,6 +199,10 @@ contactForm.addEventListener("submit", async (e) => {
   contactForm.style.display = "none";
 
   formStatus.classList.add("active");
+  document.querySelector("#contact").scrollIntoView({
+    behavior: "smooth",
+    block: "start"
+  });
   formStatus.innerHTML = `
     <div class="loader">
         <span></span>
