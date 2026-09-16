@@ -1,0 +1,797 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+
+    --black: #090a0c;
+    --black2: #111214;
+    --black3: #18191c;
+    --red: #d71920;
+    --red2: #ef1d25;
+    --white: #f5f5f5;
+    --grey: #8f9297;
+    --line: rgba(255, 255, 255, .10);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--black);
+    color: var(--white);
+    font-family: Inter, Arial, sans-serif;
+}
+
+button,
+select,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* =========================================================
+HEADER
+========================================================= */
+a{
+    text-decoration: none;
+}
+.nav-wrap {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px
+}
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.brand-mark {
+    width: 80px;
+    height: 50px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+}
+
+.brand strong {
+    display: block;
+    font-family: 'Barlow Condensed';
+    font-size: 25px;
+    line-height: .9;
+    color: white;
+}
+
+.brand small {
+    display: block;
+    font-size: 8px;
+    letter-spacing: 1.2px;
+    color: #aaa;
+    margin-top: 3px
+}
+
+header {
+    height: 76px;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+    background: var(--black);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-mark {
+    width: 55px;
+    height: 42px;
+    border: 1px solid var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 35px;
+    font-weight: 900;
+}
+
+.logo-text strong {
+    display: block;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 21px;
+    line-height: .9;
+    font-weight: 800;
+}
+
+.logo-text span {
+    display: block;
+    margin-top: 5px;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: #aaa;
+}
+
+.cart-btn {
+    background: transparent;
+    color: white;
+    border: 1px solid var(--line);
+    padding: 11px 16px;
+}
+
+.cart-btn:hover {
+    border-color: var(--red);
+}
+
+.cart-btn b {
+    color: var(--red);
+    margin-left: 8px;
+}
+
+/* =========================================================
+HERO
+========================================================= */
+
+.hero {
+    max-width: 1250px;
+    margin: auto;
+    padding: 70px 30px 55px;
+    border-bottom: 1px solid var(--line);
+}
+
+.hero small {
+    color: var(--red);
+    font-family: "Barlow Condensed", sans-serif;
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 15px;
+}
+
+.hero h1 {
+    margin: 12px 0 0;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: clamp(55px, 7vw, 88px);
+    line-height: .82;
+    text-transform: uppercase;
+    font-weight: 900;
+}
+
+.hero h1 span {
+    color: var(--red);
+}
+
+.hero p {
+    max-width: 620px;
+    margin-top: 25px;
+    color: #999;
+    line-height: 1.7;
+}
+
+/* =========================================================
+LAYOUT
+========================================================= */
+
+.main {
+    max-width: 1250px;
+    margin: auto;
+    padding: 45px 30px 100px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 365px;
+    gap: 30px;
+}
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+/* =========================================================
+PRODUCTS
+========================================================= */
+
+.product {
+    background: var(--black2);
+    border: 1px solid var(--line);
+    overflow: hidden;
+    transition: .2s;
+}
+
+.product:hover {
+    transform: translateY(-3px);
+    border-color: rgba(215, 25, 32, .7);
+}
+
+.product-image {
+    height: 205px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background:
+        radial-gradient(circle at center,
+            rgba(215, 25, 32, .13),
+            transparent 55%),
+        linear-gradient(145deg, #1a1b1e, #0d0e10);
+}
+
+.img-article {
+    display: flex;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.product-body {
+    padding: 18px;
+}
+
+.product-body h2 {
+    margin: 0;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.description {
+    min-height: 38px;
+    margin-top: 7px;
+    color: #85878b;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.product-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 18px;
+}
+
+.price {
+    color: #bfbfbf;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 35px;
+    font-weight: 800;
+}
+
+.choose {
+    background: transparent;
+    color: white;
+    border: 1px solid #333;
+    padding: 9px 12px;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.choose:hover {
+    border-color: var(--red);
+    background: var(--red);
+}
+
+/* =========================================================
+SIDEBAR
+========================================================= */
+
+.sidebar {
+    position: sticky;
+    top: 20px;
+    height: max-content;
+}
+
+.panel {
+    background: var(--black2);
+    border: 1px solid var(--line);
+    padding: 23px;
+    margin-bottom: 18px;
+}
+
+.panel-title {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 23px;
+}
+
+.panel-title::after {
+    content: "";
+    display: block;
+    width: 38px;
+    height: 2px;
+    background: var(--red);
+    margin-top: 8px;
+}
+
+.selected-name {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 29px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.selected-info {
+    color: #85878b;
+    font-size: 11px;
+    line-height: 1.5;
+    margin-top: 5px;
+}
+
+.field {
+    margin-top: 19px;
+}
+
+.field label {
+    display: block;
+    color: #888;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 7px;
+}
+
+select {
+    width: 100%;
+    height: 44px;
+    border: 1px solid var(--line);
+    background: #090a0c;
+    color: white;
+    padding: 0 11px;
+    outline: none;
+}
+
+select:focus {
+    border-color: var(--red);
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+}
+
+.quantity button {
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--line);
+    background: var(--black3);
+    color: white;
+    font-size: 20px;
+}
+
+.quantity-value {
+    width: 50px;
+    text-align: center;
+    font-weight: 800;
+}
+
+.add {
+    width: 100%;
+    height: 49px;
+    margin-top: 23px;
+    border: 0;
+    background: var(--red);
+    color: white;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.add:hover {
+    background: var(--red2);
+}
+
+/* =========================================================
+CART
+========================================================= */
+
+.empty {
+    color: #777;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.cart-item {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.cart-name {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.cart-meta {
+    color: #888;
+    font-size: 11px;
+    margin-top: 3px;
+}
+
+.cart-price {
+    color: var(--red);
+    font-weight: 700;
+    margin-top: 5px;
+}
+
+.remove {
+    border: 0;
+    background: none;
+    color: #666;
+    font-size: 10px;
+    text-transform: uppercase;
+    padding: 5px 0 0;
+}
+
+.remove:hover {
+    color: var(--red);
+}
+
+.total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-top: 16px;
+    border-top: 1px solid var(--line);
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.total span:last-child {
+    color: var(#d7d7d7);
+}
+
+.order-btn {
+    width: 100%;
+    height: 50px;
+    margin-top: 18px;
+    background: var(--red);
+    color: white;
+    border: 0;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.order-btn:hover {
+    background: var(--red2);
+}
+
+/* =========================================================
+BON DE COMMANDE
+========================================================= */
+
+.order-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .88);
+    z-index: 100;
+    display: none;
+    overflow: auto;
+    padding: 20px;
+}
+
+.order-modal.show {
+    display: block;
+}
+
+.modal-actions {
+    width: min(900px, 100%);
+    margin: 0 auto 12px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.modal-actions button {
+    padding: 11px 16px;
+    border: 1px solid #444;
+    background: #17181a;
+    color: white;
+}
+
+.modal-actions .print-btn {
+    background: var(--red);
+    border-color: var(--red);
+    font-weight: 800;
+}
+
+.paper {
+    width: 210mm;
+    min-height: 297mm;
+    margin: auto;
+    padding: 17mm;
+    background: white;
+    color: #111;
+    box-shadow: 0 10px 50px rgba(0, 0, 0, .5);
+}
+
+/* =========================================================
+DOCUMENT
+========================================================= */
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 3px solid #111;
+    padding-bottom: 18px;
+}
+
+.order-logo {
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 29px;
+    line-height: .85;
+    font-weight: 900;
+}
+
+.order-logo span {
+    color: #d71920;
+}
+
+.order-subtitle {
+    margin-top: 8px;
+    color: #777;
+    font-size: 9px;
+    letter-spacing: 1.5px;
+}
+
+.order-title {
+    text-align: right;
+}
+
+.order-title h2 {
+    margin: 0;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 32px;
+    text-transform: uppercase;
+}
+
+.order-number {
+    color: #777;
+    font-size: 10px;
+    margin-top: 5px;
+}
+
+.customer {
+    margin-top: 25px;
+    border: 1px solid #ddd;
+    padding: 13px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.customer strong {
+    font-size: 10px;
+    white-space: nowrap;
+}
+
+.customer input {
+    flex: 1;
+    height: 27px;
+    border: 0;
+    border-bottom: 1px solid #999;
+    outline: 0;
+    font-size: 12px;
+    color: #111;
+    background: white;
+}
+
+.order-table {
+    width: 100%;
+    margin-top: 27px;
+    border-collapse: collapse;
+    font-size: 11px;
+}
+
+.order-table th {
+    background: #171719;
+    color: white;
+    padding: 10px 8px;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: 10px;
+}
+
+.order-table td {
+    padding: 11px 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-table th:nth-child(3),
+.order-table td:nth-child(3) {
+    text-align: center;
+}
+
+.order-table th:last-child,
+.order-table td:last-child {
+    text-align: right;
+}
+
+.order-total {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.order-total-inner {
+    width: 230px;
+    padding-top: 10px;
+    border-top: 3px solid #111;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Barlow Condensed", sans-serif;
+    font-size: 24px;
+    font-weight: 900;
+}
+
+.order-total-inner span:last-child {
+    color: #d71920;
+}
+
+.note {
+    margin-top: 45px;
+    padding: 13px;
+    border-left: 4px solid #d71920;
+    background: #f4f4f4;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.signatures {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    margin-top: 55px;
+}
+
+.signature {
+    min-height: 80px;
+    border-top: 1px solid #999;
+    padding-top: 7px;
+    font-size: 10px;
+    color: #666;
+}
+
+/* =========================================================
+RESPONSIVE
+========================================================= */
+
+@media(max-width:1050px) {
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media(max-width:850px) {
+
+    .main {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: static;
+    }
+
+}
+
+@media(max-width:600px) {
+
+    .logo-text {
+        display: none;
+    }
+
+    .hero {
+        padding: 55px 20px 45px;
+    }
+
+    .main {
+        padding: 35px 20px 70px;
+    }
+
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .paper {
+        width: 100%;
+        min-height: auto;
+        padding: 25px;
+    }
+
+    .order-header {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .order-title {
+        text-align: left;
+    }
+
+    .signatures {
+        grid-template-columns: 1fr;
+        gap: 35px;
+
+    }
+
+}
+
+/* =========================================================
+IMPRESSION
+========================================================= */
+
+@media print {
+
+    @page {
+        size: A4;
+        margin: 0;
+    }
+
+    html,
+    body {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: white !important;
+    }
+
+    body>header,
+    body>.hero,
+    body>.main {
+        display: none !important;
+    }
+
+    #orderModal {
+        display: block !important;
+        position: static !important;
+        inset: auto !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: visible !important;
+        background: white !important;
+    }
+
+    .modal-actions {
+        display: none !important;
+    }
+
+    .paper {
+        display: block !important;
+        width: 210mm !important;
+        min-height: 297mm !important;
+        margin: 0 !important;
+        padding: 17mm !important;
+        box-shadow: none !important;
+        background: white !important;
+        color: #111 !important;
+    }
+
+    .customer input {
+        border: 0 !important;
+        border-bottom: 1px solid #999 !important;
+        color: #111 !important;
+        background: white !important;
+    }
+
+    /* =========================================================
+    FIN IMPRESSION
+    ========================================================= */
+}

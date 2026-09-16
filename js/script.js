@@ -99,6 +99,9 @@ fetch("js/news.json")
   .then(data => {
     news = data;
     renderNews();
+    if (news.length < 4) {
+      showAllNews.style.display = "none";
+    }
   });
 
 fetch("js/gallery.json")
@@ -108,9 +111,7 @@ fetch("js/gallery.json")
     renderGallery();
   });
 
-if (news.length < 4) {
-  showAllNews.style.display = "none";
-}
+
 
 function openLightbox(galleryIndex) {
 

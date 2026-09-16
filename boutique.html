@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Boutique FBAC</title>
+  <link rel="stylesheet" href="css/boutique.css">
+</head>
+
+
+<body>
+
+  <header>
+    <div class="container nav-wrap">
+      <a class="brand" href="index.html" aria-label="FBAC Accueil">
+        <span class="brand-mark"><img src="images/dragon-fbacico.svg" alt="Dragon du Full Boxe Américaine Club"></span>
+        <span><strong>FBAC</strong><small>FULL BOXE AMÉRICAINE CLUB</small></span>
+      </a>
+    </div>
+  
+    <button class="cart-btn" onclick="goCart()">
+
+      Mes articles
+
+      <b id="cartCount">
+        0
+      </b>
+
+    </button>
+
+  </header>
+
+
+  <section class="hero">
+
+    <small>
+      ÉQUIPEMENT • TEXTILE • FBAC
+    </small>
+
+    <h1>
+      ÉQUIPEZ-VOUS.<br>
+      <span>ENTRAÎNEZ-VOUS.</span>
+    </h1>
+
+    <p>
+      Retrouvez les équipements et textiles du Full Boxe
+      Américaine Club. Sélectionnez vos articles et préparez
+      votre bon de commande à présenter au club.
+    </p>
+
+  </section>
+
+
+  <main class="main">
+
+    <section>
+
+      <div class="products" id="products">
+      </div>
+
+    </section>
+
+
+    <aside class="sidebar" id="cartSection">
+
+      <div class="panel">
+
+        <div class="panel-title">
+          Sélection
+        </div>
+
+
+        <div class="selected-name" id="selectedName">
+
+          Aucun article
+
+        </div>
+
+
+        <div class="selected-info" id="selectedInfo">
+
+          Sélectionnez un article pour commencer.
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Article
+          </label>
+
+          <select id="articleSelect" onchange="selectArticle(this.value)">
+
+            <option value="">
+              Choisir un article
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Taille / variante
+          </label>
+
+          <select id="variantSelect">
+          </select>
+
+        </div>
+
+
+        <div class="field">
+
+          <label>
+            Quantité
+          </label>
+
+          <div class="quantity">
+
+            <button onclick="changeQuantity(-1)">
+
+              −
+
+            </button>
+
+
+            <div class="quantity-value" id="quantity">
+
+              1
+
+            </div>
+
+
+            <button onclick="changeQuantity(1)">
+
+              +
+
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <button class="add" onclick="addToCart()">
+
+          Ajouter à ma commande
+
+        </button>
+
+      </div>
+
+
+      <div class="panel">
+
+        <div class="panel-title">
+          Ma commande
+        </div>
+
+
+        <div id="cartItems">
+
+          <div class="empty">
+            Votre commande est actuellement vide.
+          </div>
+
+        </div>
+
+
+        <div class="total">
+
+          <span>
+            Total
+          </span>
+
+          <span id="total">
+            0,00 €
+          </span>
+
+        </div>
+
+
+        <button class="order-btn" onclick="generateOrder()">
+
+          Générer le bon de commande
+
+        </button>
+
+      </div>
+
+    </aside>
+
+  </main>
+
+
+  <!-- ======================================================
+BON DE COMMANDE
+====================================================== -->
+
+  <div class="order-modal" id="orderModal">
+
+
+    <div class="modal-actions">
+
+      <button onclick="closeOrder()">
+
+        Fermer
+
+      </button>
+
+
+      <button class="print-btn" onclick="printOrder()">
+
+        🖨 Imprimer / Enregistrer en PDF
+
+      </button>
+
+    </div>
+
+
+    <div class="paper">
+
+      <div class="order-header">
+
+        <div>
+
+          <div class="order-logo">
+
+            FULL BOXE<br>
+
+            <span>
+              AMÉRICAINE CLUB
+            </span>
+
+          </div>
+
+
+          <div class="order-subtitle">
+            BOUTIQUE DU CLUB
+          </div>
+
+        </div>
+
+
+        <div class="order-title">
+
+          <h2>
+            Bon de commande
+          </h2>
+
+
+          <div class="order-number" id="orderNumber">
+          </div>
+
+
+          <div class="order-number" id="orderDate">
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="customer">
+
+        <strong>
+          ADHÉRENT :
+        </strong>
+
+
+        <input id="customerName" type="text" placeholder="Nom et prénom">
+
+      </div>
+
+
+      <table class="order-table">
+
+        <thead>
+
+          <tr>
+
+            <th>
+              Article
+            </th>
+
+            <th>
+              Taille / variante
+            </th>
+
+            <th>
+              Qté
+            </th>
+
+            <th>
+              Total
+            </th>
+
+          </tr>
+
+        </thead>
+
+
+        <tbody id="orderLines">
+        </tbody>
+
+      </table>
+
+
+      <div class="order-total">
+
+        <div class="order-total-inner">
+
+          <span>
+            TOTAL
+          </span>
+
+
+          <span id="orderTotal">
+            0,00 €
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="note">
+
+        <strong>
+          IMPORTANT
+        </strong>
+
+        <br>
+
+        Ce document constitue une demande de commande à
+        présenter au Full Boxe Américaine Club.
+        La commande devra être validée par le club avant
+        toute remise du matériel.
+
+      </div>
+
+
+      <div class="signatures">
+
+        <div class="signature">
+          Signature de l'adhérent
+        </div>
+
+
+        <div class="signature">
+          Validation du FBAC
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <script src="js/boutique.js"></script>
+</body>
+
+</html>

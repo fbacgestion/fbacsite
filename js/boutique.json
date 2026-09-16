@@ -1,0 +1,172 @@
+[
+    {
+        "id": "gants",
+        "name": "Gants de boxe",
+        "price": 25.00,
+        "image": "images/boutique/gants.jpg",
+        "sizes": [
+            "6 oz — Enfant 6 à 10 ans",
+            "8 oz — Femme jusqu'à 54 kg",
+            "10 oz — Homme jusqu'à 65 kg | Femme 54 à 72 kg",
+            "12 oz — Homme 65 kg et + | Femme 72 kg et +",
+            "14 oz — Entraînement Adultes",
+            "16 oz — Entraînement renforcé Adultes"
+        ],
+        "info": "Gants adaptés à l'entraînement et à la pratique du Full Contact."
+    },
+    {
+        "id": "casque",
+        "name": "Casque de protection",
+        "price": 35.00,
+        "image": "images/boutique/casque.jpg",
+        "sizes": [
+            "XS circonference tête <52cm",
+            "S circonference tête 52-55cm",
+            "M circonference tête 55-58cm",
+            "L circonference tête 58-60cm",
+            "XL circonference tête >60cm"
+        ],
+        "info": "Protection de la tête pour les entraînements avec opposition."
+    },
+    {
+        "id": "dent",
+        "name": "Protège-dents",
+        "price": 10.00,
+        "image": "images/boutique/protegedent.jpg",
+        "sizes": [
+            "Junior",
+            "Adulte"
+        ],
+        "info": "Protection dentaire pour les entraînements et combats."
+    },
+    {
+        "id": "poitrine",
+        "name": "Protège-poitrine",
+        "price": 35.00,
+        "image": "images/boutique/poitrine.jpg",
+        "sizes": [
+            "XS|tour poitrine 80|bonnet A/B",
+            "S|tour poitrine 85|bonnet A",
+            "M|tour poitrine 85|bonnet B/C",
+            "L|tour poitrine 90/95|bonnet C",
+            "XL|tour poitrine 90/95|bonnet D"
+        ],
+        "info": "Protection adaptée à la pratique du Full Contact."
+    },
+    {
+        "id": "tshirt",
+        "name": "T-shirt",
+        "price": 20.00,
+        "image": "images/boutique/tshirt.jpg",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"
+        ],
+        "info": "T-shirt FBAC."
+    },
+    {
+        "id": "coquille",
+        "name": "Coquille",
+        "price": 10.00,
+        "image": "images/boutique/coquille.jpg",
+        "sizes": [
+            "XS tour de hanche <90cm",
+            "S tour de hanche 90-97cm",
+            "M tour de hanche 98-105cm",
+            "L tour de hanche 106-109cm",
+            "XL tour de hanche 110-113cm",
+            "XXL tour de hanche 114-117cm"
+        ],
+        "info": "Protection de la partie génitale masculine."
+    },
+    {
+        "id": "sweat",
+        "name": "Sweatshirt à capuche",
+        "price": 35.00,
+        "image": "images/boutique/sweatcapuche.jpg",
+        "sizes": [
+            "XS",
+            "S",
+            "M",
+            "L",
+            "XL",
+            "XXL"
+        ],
+        "info": "Sweatshirt à capuche aux couleurs du club et floquée."
+    },
+    {
+        "id": "bandages",
+        "name": "Bandages",
+        "price": 10.00,
+        "image": "images/boutique/bandes.jpg",
+        "sizes": [
+            "2,5 m"
+        ],
+        "info": "Bandages de protection pour les mains."
+    },
+    {
+        "id": "pantalon",
+        "name": "Pantalon Full Contact",
+        "price": 20.00,
+        "image": "images/boutique/pantalon.jpg",
+        "sizes": [
+            "Hauteurs de corps <90cm",
+            "Hauteurs de corps 90-100cm",
+            "Hauteurs de corps 100-110cm",
+            "Hauteurs de corps 110-120cm",
+            "Hauteurs de corps 120-130cm",
+            "Hauteurs de corps 130-140cm",
+            "Hauteurs de corps 140-150cm",
+            "Hauteurs de corps 150-160cm",
+            "Hauteurs de corps 160-170cm",
+            "Hauteurs de corps 170-180cm",
+            "Hauteurs de corps 180-190cm",
+            "Hauteurs de corps 190-200cm"
+        ],
+        "info": "Pantalon destiné à la pratique du Full Contact."
+    },
+    {
+        "id": "tibias",
+        "name": "Protège-tibias",
+        "price": 15.00,
+        "image": "images/boutique/protegetibia.jpg",
+        "sizes": [
+            "S Hauteurs de corps/cm 150-160",
+            "M Hauteurs de corps/cm 160-170",
+            "L Hauteurs de corps/cm 170-180",
+            "XL Hauteurs de corps/cm 180-190",
+            "XXL Hauteurs de corps/cm 190-200"
+        ],
+        "info": "Protection des tibias pour l'entraînement."
+    },
+    {
+        "id": "chaussons",
+        "name": "Chaussons de boxe",
+        "price": 30.00,
+        "image": "images/boutique/chausson.jpg",
+        "sizes": [
+            "XXS Pointure <33",
+            "XS Pointure 34-36",
+            "S Pointure 37-38",
+            "M Pointure 39-41",
+            "L Pointure 42-43",
+            "XL Pointure 44-45",
+            "XXL Pointure 46-47"
+        ],
+        "info": "Chaussures légères adaptées aux sports de combat."
+    },
+    {
+        "id": "passeport",
+        "name": "Passeport Sportif",
+        "price": 20.00,
+        "image": "images/boutique/passeport.jpg",
+        "sizes": [
+            "-"
+        ],
+        "info": "Passeport sportif officiel permettant le suivi de la pratique, des grades et des compétitions."
+    }
+]

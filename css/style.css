@@ -97,7 +97,8 @@ textarea {
     gap: 22px;
     font-size: 12px;
     font-weight: 700;
-    text-transform: uppercase
+    text-transform: uppercase;
+    flex-wrap: wrap;
 }
 
 .main-nav a {
