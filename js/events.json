@@ -40,16 +40,6 @@
     "lieu": "Gymnase Remi Jamme 20H00"
   },
   {
-    "date": "2027-04-03",
-    "day": 3,
-    "month": "AVRIL",
-    "year": 2027,
-    "title": "STAGE Rodrigue Listoir 🥊 Deuxième édition !",
-    "info": "Une journée exceptionnelle avec Rodrigue Listoir, autour de la technique, du perfectionnement et du partage d’expérience. Un stage ouvert aux pratiquants souhaitant progresser et enrichir leur pratique.",
-    "type": "Stage FBAC",
-    "lieu": "Info à venir 14H-17H"
-  },
-  {
     "date": "2026-11-14",
     "day": 14,
     "month": "NOVEMBRE",
@@ -57,7 +47,17 @@
     "title": "STAGE Jean-Luc Kitoko 🥊 1er édition !",
     "info": "Le FBAC accueillera prochainement Jean-Luc Kitoko pour un stage exceptionnel.",
     "type": "Stage FBAC",
-    "lieu": "Info à venir 14H-17H"
+    "lieu": "Dojo D'agneaux, 14H-17H"
+  },
+  {
+    "date": "2027-04-03",
+    "day": 3,
+    "month": "AVRIL",
+    "year": 2027,
+    "title": "STAGE Rodrigue Listoir 🥊 Deuxième édition !",
+    "info": "Une journée exceptionnelle avec Rodrigue Listoir, autour de la technique, du perfectionnement et du partage d’expérience. Un stage ouvert aux pratiquants souhaitant progresser et enrichir leur pratique.",
+    "type": "Stage FBAC",
+    "lieu": "Dojo D'agneaux, 14H-17H"
   },
   {
     "date": "2027-06-09",
