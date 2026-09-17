@@ -12,11 +12,11 @@
             "14 oz — Entraînement Adultes",
             "16 oz — Entraînement renforcé Adultes"
         ],
-        "info": "Gants adaptés à l'entraînement et à la pratique du Full Contact."
+        "info": "Gants adaptés à l'entraînement (obligatoire)."
     },
     {
         "id": "casque",
-        "name": "Casque de protection",
+        "name": "Casque",
         "price": 35.00,
         "image": "images/boutique/casque.jpg",
         "sizes": [
@@ -26,7 +26,7 @@
             "L circonference tête 58-60cm",
             "XL circonference tête >60cm"
         ],
-        "info": "Protection de la tête pour les entraînements avec opposition."
+        "info": "Protection de la tête pour les entraînements."
     },
     {
         "id": "dent",
@@ -37,11 +37,11 @@
             "Junior",
             "Adulte"
         ],
-        "info": "Protection dentaire pour les entraînements et combats."
+        "info": "Protection dentaire pour les entraînements (obligatoire)."
     },
     {
         "id": "poitrine",
-        "name": "Protège-poitrine",
+        "name": "Plastron",
         "price": 35.00,
         "image": "images/boutique/poitrine.jpg",
         "sizes": [
@@ -51,7 +51,7 @@
             "L|tour poitrine 90/95|bonnet C",
             "XL|tour poitrine 90/95|bonnet D"
         ],
-        "info": "Protection adaptée à la pratique du Full Contact."
+        "info": "Protection féminine adaptée à la pratique (obligatoire)."
     },
     {
         "id": "tshirt",
@@ -66,7 +66,7 @@
             "XL",
             "XXL"
         ],
-        "info": "T-shirt FBAC."
+        "info": "T-shirt noir du club (floquée)."
     },
     {
         "id": "coquille",
@@ -81,11 +81,11 @@
             "XL tour de hanche 110-113cm",
             "XXL tour de hanche 114-117cm"
         ],
-        "info": "Protection de la partie génitale masculine."
+        "info": "Protection masculine (obligatoire)."
     },
     {
-        "id": "sweat",
-        "name": "Sweatshirt à capuche",
+        "id": "Sweatshirt",
+        "name": "Sweatshirt",
         "price": 35.00,
         "image": "images/boutique/sweatcapuche.jpg",
         "sizes": [
@@ -96,7 +96,7 @@
             "XL",
             "XXL"
         ],
-        "info": "Sweatshirt à capuche aux couleurs du club et floquée."
+        "info": "Sweatshirt à capuche blanc du club(floquée)."
     },
     {
         "id": "bandages",
@@ -110,7 +110,7 @@
     },
     {
         "id": "pantalon",
-        "name": "Pantalon Full Contact",
+        "name": "Pantalon",
         "price": 20.00,
         "image": "images/boutique/pantalon.jpg",
         "sizes": [
@@ -127,7 +127,7 @@
             "Hauteurs de corps 180-190cm",
             "Hauteurs de corps 190-200cm"
         ],
-        "info": "Pantalon destiné à la pratique du Full Contact."
+        "info": "Pantalon de Full Contact."
     },
     {
         "id": "tibias",
@@ -141,7 +141,7 @@
             "XL Hauteurs de corps/cm 180-190",
             "XXL Hauteurs de corps/cm 190-200"
         ],
-        "info": "Protection des tibias pour l'entraînement."
+        "info": "Protection des tibias pour l'entraînement (obligatoire)."
     },
     {
         "id": "chaussons",
@@ -157,16 +157,16 @@
             "XL Pointure 44-45",
             "XXL Pointure 46-47"
         ],
-        "info": "Chaussures légères adaptées aux sports de combat."
+        "info": "Chausson adaptées aux sports de combat (obligatoire)."
     },
     {
         "id": "passeport",
-        "name": "Passeport Sportif",
+        "name": "Passeport FFK",
         "price": 20.00,
         "image": "images/boutique/passeport.jpg",
         "sizes": [
             "-"
         ],
-        "info": "Passeport sportif officiel permettant le suivi de la pratique, des grades et des compétitions."
+        "info": "indispensable en compétition."
     }
 ]

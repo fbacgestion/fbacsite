@@ -195,7 +195,7 @@ LAYOUT
 
 .products {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 18px;
 }
 
@@ -241,7 +241,7 @@ PRODUCTS
 .product-body h2 {
     margin: 0;
     font-family: "Barlow Condensed", sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     text-transform: uppercase;
     font-weight: 800;
 }
@@ -257,8 +257,8 @@ PRODUCTS
 .product-footer {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-top: 18px;
+    justify-content: center;
+    margin-top: 0;
 }
 
 .price {
@@ -587,7 +587,7 @@ DOCUMENT
     border: 0;
     border-bottom: 1px solid #999;
     outline: 0;
-    font-size: 12px;
+    font-size: 16px;
     color: #111;
     background: white;
 }

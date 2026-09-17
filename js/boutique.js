@@ -83,15 +83,6 @@ function renderProducts() {
             <div class="price">
               ${money(article.price)}
             </div>
-
-            <button
-              class="choose"
-              onclick="selectArticle('${article.id}')">
-
-              Choisir
-
-            </button>
-
           </div>
 
         </div>
