@@ -17,7 +17,7 @@
     {
         "id": "casque",
         "name": "Casque",
-        "price": 35.00,
+        "price": 50.00,
         "image": "images/boutique/casque.jpg",
         "sizes": [
             "XS circonference tête <52cm",
