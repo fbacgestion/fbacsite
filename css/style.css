@@ -126,6 +126,8 @@ textarea {
     font-size: 28px
 }
 
+
+
 .hero {
     position: relative;
     min-height: 650px;
@@ -267,6 +269,16 @@ textarea {
     justify-content: space-between;
     gap: 20px;
     margin-bottom: 35px
+}
+.section-heading {
+    opacity: 0;
+    transform: translateX(-40vw);
+    transition: .8s ease;
+}
+
+.section-heading.visible {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 h2 {
@@ -659,7 +671,16 @@ h2 {
     min-width: 300px;
     width: 48%;
 }
+.event {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 1s ease;
+}
 
+.event.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
 .event-date {
     font: 800 34px/1 'Barlow Condensed';
     text-transform: uppercase
@@ -709,28 +730,32 @@ h2 {
 
 .club-card {
     min-height: 390px;
-    background: linear-gradient(145deg, #111418, #050607);
+    background: #080a0d;    
     color: white;
     border-radius: 6px;
-    padding: 45px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     position: relative;
-    overflow: hidden
+    overflow: hidden;
 }
-
+.stat {
+    display: flex;
+    flex-wrap: nowrap;
+    max-width: 100px;
+    gap: 6px;
+}
+.data_value{
+    font-size: 2.5em !important;
+}
 .club-card:after {
     content: '';
     position: absolute;
-    width: 300px;
-    height: 300px;
-    border: 35px solid rgba(215, 25, 32, .15);
-    border-radius: 50%;
-    right: -100px;
-    top: -80px
+    inset: 0;
+    background: url(../images/dragon-fbac.svg) 90% -45% / auto 69% no-repeat;
+    pointer-events: none;
 }
-
 .club-card-big {
     font: 900 110px/.8 'Barlow Condensed';
     color: var(--red);
@@ -845,9 +870,8 @@ h2 {
 
 .prices strong {
     display: block;
-    font: 900 65px 'Barlow Condensed';
-    color: var(--red);
-    line-height: 1.1
+    font: 700 60px 'Barlow Condensed';
+    line-height: 1.1;
 }
 
 .prices small {
@@ -858,7 +882,12 @@ h2 {
 .featured small {
     color: #aaa
 }
-
+.groupeuro{
+    display: flex;
+    font-size: x-large !important;
+    justify-content: center;
+    align-items: center;
+}
 .registration-box {
     margin-top: 18px;
     background: #111418;

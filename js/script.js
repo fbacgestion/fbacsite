@@ -39,6 +39,27 @@ function renderNews(items = news) {
     `).join("");
 }
 
+
+// observ titre cardevent
+const headingObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        headingObserver.unobserve(entry.target);
+    });
+}, { threshold: 0.2 });
+
+document.querySelectorAll(".section-heading").forEach(heading => headingObserver.observe(heading));
+
+const eventObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        eventObserver.unobserve(entry.target);
+    });
+}, { threshold: 0.75 });
+
+
 function renderEvents() {
   const sortedEvents = [...events].sort((a, b) => {
     return new Date(a.date) - new Date(b.date);
@@ -62,7 +83,10 @@ function renderEvents() {
           <span class="event-type"><p>${e.lieu}</p></span>  
       </article>
   `).join("");
+
+  document.querySelectorAll(".event").forEach(event => eventObserver.observe(event));
 }
+
 
 function renderGallery() {
 
@@ -306,3 +330,27 @@ galleryLightbox.addEventListener("click", (e) => {
     closeLightbox();
   }
 });
+
+// compteur value
+const compteurs = document.querySelectorAll("[data-value]");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+
+        const compteur = entry.target;
+        const valeurFinale = Number(compteur.dataset.value);
+        let valeur = 0;
+
+        const animation = setInterval(() => {
+            valeur++;
+            compteur.textContent = valeur;
+
+            if (valeur >= valeurFinale) clearInterval(animation);
+        }, 25);
+
+        observer.unobserve(compteur);
+    });
+}, { threshold: 0.75 });
+
+compteurs.forEach(compteur => observer.observe(compteur));
