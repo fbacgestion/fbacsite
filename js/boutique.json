@@ -162,7 +162,7 @@
     {
         "id": "passeport",
         "name": "Passeport FFK",
-        "price": 20.00,
+        "price": 30.00,
         "image": "images/boutique/passeport.jpg",
         "sizes": [
             "-"
